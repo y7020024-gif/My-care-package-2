@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Made With Love, For My Girls 🤍</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+  color: #fffaf5;
+  background: radial-gradient(circle at top, #6d5960 0%, #40353b 45%, #201b22 100%);
+  overflow: hidden;
+}
+
+/* Each slide */
+.screen {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 80px 20px 50px;
+  text-align: center;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* Content inside each slide */
+.screen-content {
+  min-height: calc(100dvh - 130px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Long slide */
+.long .screen-content {
+  min-height: auto;
+  justify-content: flex-start;
+  padding-bottom: 30px;
+}
+
+h1 {
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  margin-bottom: 20px;
+}
+
+p {
+  max-width: 700px;
+  font-size: clamp(1rem, 4vw, 1.25rem);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+button {
+  background: #fff4ea;
+  color: #5b4034;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 28px;
+  font-size: 1rem;
+  font-family: inherit;
+  margin: 10px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0,0,0,.25);
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+/* Music button */
+#musicButton {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 100;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 1.3rem;
+}
+
+/* Turtle */
+.turtle {
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+/* Gift */
+.gift {
+  font-size: 8rem;
+  cursor: pointer;
+  margin: 15px;
+}
+
+/* Emoji surprise */
+.surprise {
+  font-size: 5rem;
+  margin: 15px;
+}
+
+/* Letter */
+.letter {
+  width: 100%;
+  max-width: 750px;
+  background: rgba(255,250,245,.96);
+  color: #5b4034;
+  border-radius: 25px;
+  padding: 25px;
+  text-align: left;
+  box-shadow: 0 10px 40px rgba(0,0,0,.3);
+  margin-bottom: 20px;
+}
+
+.letter p {
+  margin-bottom: 16px;
+}
+
+.small-text {
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .letter {
+    padding: 20px;
+  }
+
+  .gift {
+    font-size: 7rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="new-music.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicButton" onclick="toggleMusic()">🎵</button>
+
+
+<!-- SLIDE 1 -->
+<section class="screen active">
+
+<div class="screen-content">
+
+<div class="turtle">🐢🤍</div>
+
+<h1>Made With Love, For My Girls 💌</h1>
+
+<p class="small-text">
+MY little female turtles 😘😘😘
+</p>
+
+<p>
+Hey my girls 🥹💕 I made something small and special for you.
+A little care package filled with love, comfort, and reminders
+that you're never alone 🤍
+</p>
+
+<button onclick="nextScreen()">
+Open your care package 🎁
+</button>
+
+</div>
+</section>
+
+
+<!-- SLIDE 2 -->
+<section class="screen">
+
+<div class="screen-content">
+
+<h2>Your Little Care Package 🎁</h2>
+
+<p>
+This is especially for my girls 🥹🤍
+Tap the gift and let's open it together.
+</p>
+
+<div class="gift" onclick="nextScreen()">
+🎁
+</div>
+
+<p class="small-text">
+Tap the gift 🤍
+</p>
+
+</div>
+</section>
+
+
+<!-- SLIDE 3 -->
+<section class="screen">
+
+<div class="screen-content">
+
+<div class="surprise">🫂</div>
+
+<h2>A Warm Hug</h2>
+
+<p>
+If you're feeling tired, uncomfortable, emotional,
+or just not yourself, imagine this as the biggest
+warm hug from me 🥹🤍
+</p>
+
+<p>
+You don't have to be okay all the time.
+Take your time, rest, and be gentle with yourself 🫶
+</p>
+
+<button onclick="nextScreen()">
+Next little surprise ✨
+</button>
+
+</div>
+</section>
+
+
+<!-- SLIDE 4 -->
+<section class="screen">
+
+<div class="screen-content">
+
+<div class="surprise">🍫☕🧸</div>
+
+<h2>Something Sweet</h2>
+
+<p>
+Here's your reminder to get comfortable,
+have something you enjoy, drink some water,
+and give yourself some extra care today 🤍
+</p>
+
+<p>
+And if everything feels annoying...
+you are officially allowed to complain to me 😭💕
+</p>
+
+<button onclick="nextScreen()">
+There's something else 💌
+</button>
+
+</div>
+</section>
+
+
+<!-- SLIDE 5 -->
+<section class="screen long">
+
+<div class="screen-content">
+
+<h2>A Letter From Me 💌</h2>
+
+<div class="letter">
+
+<p>My girls 🥹💕</p>
+
+<p>
+I just wanted to check on you and remind you that
+you're not alone, especially when you're on your period
+and not feeling like yourself. Please rest, take care
+of yourself, and don't hesitate to tell me if you need
+anything at all.
+</p>
+
+<p>
+Even if it's just someone to talk to,
+complain to, or sit with, I'm always here for you 🤍🥹
+</p>
+
+<p>
+I just want you to know how deeply special you are to me
+and how much I care about you. Seeing you not feel your
+best makes me wish I could be there to comfort you,
+make you smile, and remind you how loved you are 🫶
+</p>
+
+<p>
+You mean so much to me, and no matter what kind of day
+you're having, I'll always have so much love and care
+for you.
+</p>
+
+<p>
+Love you girls so much 🥹💗 I hope you feel better and
+a little more loved today. Sending you the biggest hugs
+and all my love 🤍✨
+</p>
+
+</div>
+
+<button onclick="nextScreen()">
+One more thing 🌸
+</button>
+
+</div>
+</section>
+
+
+<!-- SLIDE 6 -->
+<section class="screen">
+
+<div class="screen-content">
+
+<div class="surprise">
+🌸🤍✨
+</div>
+
+<h2>A Little Reminder</h2>
+
+<p>You are loved. 🤍</p>
+
+<p>You are special. 🌷</p>
+
+<p>You are appreciated. 🫶</p>
+
+<p>You never have to go through everything alone. ✨</p>
+
+<button onclick="nextScreen()">
+From my heart 💗
+</button>
+
+</div>
+</section>
+
+
+<!-- SLIDE 7 -->
+<section class="screen">
+
+<div class="screen-content">
+
+<div class="turtle">
+🐢💕🐢
+</div>
+
+<h1>
+For My Little Female Turtles 😘😘😘
+</h1>
+
+<p>
+No matter how you're feeling today,
+please remember that you have me.
+I'm always here to listen,
+laugh with you, comfort you,
+or simply remind you how much you mean to me 🤍🥹
+</p>
+
+<p>
+Take care of yourselves, my girls.
+You deserve softness, comfort, love,
+and all the warm hugs in the world 🫂💗
+</p>
+
+<h2>
+Love you girls so much 🤍✨
+</h2>
+
+<button onclick="restart()">
+Open it again 🔄
+</button>
+
+</div>
+</section>
+
+
+<script>
+
+let currentScreen = 0;
+
+const screens = document.querySelectorAll(".screen");
+
+function nextScreen() {
+
+  screens[currentScreen].classList.remove("active");
+
+  currentScreen++;
+
+  if (currentScreen >= screens.length) {
+    currentScreen = screens.length - 1;
+  }
+
+  screens[currentScreen].classList.add("active");
+
+  screens[currentScreen].scrollTop = 0;
+}
+
+
+function restart() {
+
+  screens[currentScreen].classList.remove("active");
+
+  currentScreen = 0;
+
+  screens[currentScreen].classList.add("active");
+
+  screens[currentScreen].scrollTop = 0;
+}
+
+
+/* MUSIC */
+
+const music = document.getElementById("music");
+
+const musicButton =
+document.getElementById("musicButton");
+
+
+function toggleMusic() {
+
+  if (music.paused) {
+
+    music.play();
+
+    musicButton.textContent = "🎶";
+
+  } else {
+
+    music.pause();
+
+    musicButton.textContent = "🎵";
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
